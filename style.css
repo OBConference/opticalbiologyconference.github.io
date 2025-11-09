@@ -260,3 +260,207 @@ th{background:#f8fbff}
   .prog-table thead th, .prog-table tbody td { font-size:0.9rem; padding:8px; }
   .gallery-item img{ height:140px; }
 }
+
+/* --- About / Who We Are page --- */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.team-card {
+  flex: 1 1 320px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(20, 30, 40, 0.08);
+  text-align: center;
+}
+
+.team-logo {
+  max-height: 80px;
+  max-width: 160px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.team-logo.small {
+  max-height: 60px;
+  margin-left: 10px;
+}
+
+.team-desc {
+  font-size: 0.95rem;
+  color: #2e2e2e;
+  line-height: 1.5;
+}
+
+
+/* Landing & About page refinements */
+.hero-center { align-items:center; }
+.hero-left .hero-bullets { margin:12px 0; padding-left:1.1rem; }
+.hero-bullets li { margin:6px 0; }
+
+.card-shadow { border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(15,25,40,0.08); }
+.card-caption { padding:10px; background:#fff; font-size:0.92rem; color:#444; text-align:center; }
+
+/* Spotlight / quick info */
+.spotlight { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:20px; }
+.spot { background:#fff; padding:14px; border-radius:12px; box-shadow:0 8px 18px rgba(20,30,40,0.06); }
+.spot h3 { margin-top:0; }
+
+/* Announcements */
+.announcements { list-style:disc; padding-left:1.1rem; }
+
+/* People grid & team styles (re-affirmed) */
+.people-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-top:12px;
+}
+.person-card { background:#fff; border-radius:12px; padding:12px; text-align:center; box-shadow:0 8px 20px rgba(20,30,40,0.06); }
+.person-photo { width:90px; height:90px; object-fit:cover; border-radius:50%; border:3px solid #eef6fb; margin-bottom:10px; }
+
+/* Responsive */
+@media (max-width:980px){
+  .spotlight{ grid-template-columns:1fr; }
+  .hero{ grid-template-columns:1fr; }
+}
+
+/* --- Affiliated institutes block (aligned logos, bottom text) --- */
+.affiliated-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  align-items: stretch;
+}
+
+.aff-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(20, 30, 40, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* space between logo and caption */
+  height: 170px; /* consistent box height */
+}
+
+.aff-card img {
+  max-height: 60px;
+  max-width: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.aff-caption {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #2e3b46;
+  line-height: 1.3;
+}
+
+/* subtle muted paragraph above section */
+.muted {
+  font-size: 0.95rem;
+  color: #5c6773;
+}
+
+/* mobile */
+@media (max-width: 720px) {
+  .aff-card {
+    height: 150px;
+    padding: 12px;
+  }
+  .aff-caption {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* --- Organising committee as rows (one row per institute) --- */
+.people-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;              /* vertical spacing between institute rows */
+  margin-top: 14px;
+  align-items: stretch;
+}
+
+/* Each institute row: title then horizontal people area */
+.inst-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;    /* center the people block */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;     /* ensure inline/inline-block children are centered */
+}
+
+/* Institute title (centered above row) */
+.inst-title {
+  margin: 0 0 8px;
+  color: #155799;
+  font-size: 1.05rem;
+  display: inline-block;  /* shrink-wrap to text width */
+  text-align: center;
+  align-self: center;     /* defensive: center in the flex column */
+  padding-left: 0;
+}
+
+/* People container: horizontal list of person cards, centered and wrapping */
+.inst-people {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center; /* center cards horizontally within the row */
+  flex-wrap: wrap;         /* wrap on small screens */
+  width: 100%;
+  padding: 6px 0 12px 0;
+}
+
+/* Person card */
+.person-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  width: 220px;
+  box-shadow: 0 8px 20px rgba(20,30,40,0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Person photo and text */
+.person-photo {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #eef6fb;
+}
+.person-card h4 { margin: 0; font-size: 1rem; color: #123b58; }
+.person-card p { margin: 0; font-size: 0.9rem; color: #444; line-height: 1.3; }
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .person-card { width: 200px; }
+  .inst-title { /* keep centered and readable on medium screens */
+    font-size: 1.02rem;
+  }
+}
+
+/* Mobile: stack everything vertically; card width becomes fluid */
+@media (max-width: 640px) {
+  .inst-people { justify-content: center; gap: 12px; }
+  .person-card { width: 100%; max-width: 320px; }
+  .inst-title { text-align: center; }
+}
